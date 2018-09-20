@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+		<script src="../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+		</script>
+	</head>
+   
+	<body>
+		
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			<legend>常规时间线</legend>
+		</fieldset>
+		<input type="text" name="" id="txt" value="" class="layui-input" />
+		<div id="a" >
+			
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				   
+				layui.config({
+					base:'../'
+				}).extend({ 
+					 mcity: './layui/mods/area/mcity',
+				}).use(["mcity"],function(){
+					var city=layui.mcity;
+					var one=city({
+						//容器选择器
+						elem:"#a", 
+						//input 选择器
+						trigger:"#txt",
+						//获得格式  例如：xx/xx/xx xx,xx,xx
+						format:",",
+						//默认值
+						data:"辽宁省,朝阳市,北票市", 
+					});  
+					//渲染
+					one.render(); 
+					
+					
+				});
+			});
+		</script>
+		
+	</body>
+
+</html>
